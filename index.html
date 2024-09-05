@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthing Status Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+FSmkyS10E2Mwn4i2YNNVFJ5H77/TcW8I4m+hpo" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">SCIOTH</div>
+        <button class="menu-btn" id="menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Reports</a></li>
+            <li class="summavelia"><a class="summa" href="#">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li class="active"><a href="#">Earthing Status</a></li>
+            <li><a href="#">Power Consumption</a></li>
+            <li><a href="#">Weather Forecast</a></li>
+            <li><a href="#">System Logs</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content" id="main-content">
+        <div class="dashboard-header">
+            <h1>Earthing Status Monitoring</h1>
+        </div>
+        <div class="dashboard-body">
+            <div class="status-card">
+                <div id="status-icon" class="status-icon">🔄</div>
+                <div id="status-text" class="status-text">Checking Status...</div>
+            </div>
+            <button id="refreshBtn" class="refresh-button">Refresh Status</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

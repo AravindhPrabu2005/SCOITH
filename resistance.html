@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthing Status Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 300px;
+            width: 500px;
+            margin: 200px 0 0 500px;
+            /* Adds 100px space from the top and left */
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .bar {
+            width: 50px;
+            background: #007BFF;
+            margin: 0 10px;
+            border-radius: 5px;
+            position: relative;
+            transition: height 0.5s ease, transform 0.3s ease;
+        }
+
+        .bar:hover {
+            transform: scale(1.05);
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">SCIOTH</div>
+        <button class="menu-btn" id="menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="summavelia"><a class="summa" href="#">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li class="active"><a href="index.html">Earthing Status</a></li>
+            <li><a href="leakage.html">Leakage current value</a></li>
+            <li><a href="resistance.html">Same for resistance</a></li>
+            <li><a href="#">System Logs</a></li>
+        </ul>
+    </div>
+
+    <div class="chart-container">
+        <div class="bar" id="bar1">
+            <span class="bar-label" id="label1"></span>
+        </div>
+        <div class="bar" id="bar2">
+            <span class="bar-label" id="label2"></span>
+        </div>
+        <div class="bar" id="bar3">
+            <span class="bar-label" id="label3"></span>
+        </div>
+        <div class="bar" id="bar4">
+            <span class="bar-label" id="label4"></span>
+        </div>
+        <div class="bar" id="bar5">
+            <span class="bar-label" id="label5"></span>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script>
+        const randomValues = Array.from({ length: 5 }, () => Math.floor(Math.random() * 100 + 10));
+
+        // Update bar heights and display values above the bars
+        document.getElementById('bar1').style.height = randomValues[0] + 'px';
+        document.getElementById('label1').textContent = randomValues[0];
+
+        document.getElementById('bar2').style.height = randomValues[1] + 'px';
+        document.getElementById('label2').textContent = randomValues[1];
+
+        document.getElementById('bar3').style.height = randomValues[2] + 'px';
+        document.getElementById('label3').textContent = randomValues[2];
+
+        document.getElementById('bar4').style.height = randomValues[3] + 'px';
+        document.getElementById('label4').textContent = randomValues[3];
+
+        document.getElementById('bar5').style.height = randomValues[4] + 'px';
+        document.getElementById('label5').textContent = randomValues[4];
+
+        console.log(randomValues); // To see the generated values in the console
+    </script>
+
+</body>
+
+</html>
